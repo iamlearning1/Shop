@@ -1,7 +1,6 @@
-const http = require("http");
 const fs = require("fs");
 
-const server = http.createServer((req, res) => {
+const requestHandler = (req, res) => {
   const url = req.url;
   const method = req.method;
   if (url == "/") {
@@ -17,7 +16,6 @@ const server = http.createServer((req, res) => {
     const body = [];
     req.on("data", chunk => {
       body.push(chunk);
-      console.log(body);
     });
     return req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
@@ -35,6 +33,6 @@ const server = http.createServer((req, res) => {
   res.write("<body><h1>Hello from my Node.js Server!</h1></body>");
   res.write("</html>");
   res.end();
-});
+};
 
-server.listen(3000);
+module.exports = requestHandler;
