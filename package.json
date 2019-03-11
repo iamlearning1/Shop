@@ -1,12 +1,12 @@
 {
-  "name": "Shop",
+  "name": "nodejs-complete-guide",
   "version": "1.0.0",
-  "description": "",
+  "description": "Complete Node.js Guide",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "start-server": "node server.js"
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
   },
   "author": "Deepak",
   "license": "ISC",
